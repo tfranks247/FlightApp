@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+<body>
+
+<div th:replace="base :: navlinks"></div>
+
+
+<div class="jumbotron jumbotron-fluid" style="background-color: whitesmoke">
+    <div class="container">
+        <h1 class="display-4 text-center">Flight List</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="col-2"></div>
+    <div class="col-8 content">
+        <a href="/"class="btn btn-success btn-sm active" role="button">Show All Flights</a><br />
+        Departing Airport :<span th:text="${flight.departingAirport} " class="form-control"></span><br />
+        Arriving Airport :<span th:text="${flight.arrivingAirport} " class="form-control"></span><br />
+        Flight type :<span th:text="${flight.type} " class="form-control"></span><br />
+        Price :<span th:text="${flight.price} " class="form-control"></span><br />
+        Date :<span th:text="${flight.date}" class="form-control"></span><br />
+        Flight number :<span th:text="${flight.flightNumber}" class="form-control"></span><br />
+        <a th:href="@{/delete/{id}(id=${flight.id})}" class="btn btn-success btn-sm active" role="button">Delete this Flight</a>
+    </div>
+    <div class="col-2"></div>
+</div>
+</body>
+</html>

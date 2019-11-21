@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+<body>
+
+<div th:replace="base :: navlinks"></div>
+
+
+<div class="jumbotron">
+    <h1 class="display-4 text-center">Search List</h1>
+    <p class="lead text-center">Fly Eagles Fly</p>
+    <hr class="my-4">
+</div>
+<a href="/add"class="btn btn-success btn-lg active btn-block" role="button">Add a Flight</a><br />
+<table class="table">
+    <thead class ="thead-dark">
+    <tr>
+        <th scope="col">Departing Flight</th>
+        <th scope="col">Arriving Flight</th>
+        <th scope="col">Flight Type</th>
+        <th scope="col">Price</th>
+        <th scope="col">Date</th>
+        <th scope="col">Flight Number</th>
+    </tr>
+    </thead>
+    <tr th:each="flight : ${flights}" >
+        <td th:text="${flight.departingAirport}"></td>
+        <td th:text="${flight.arrivingAirport}"></td>
+        <td th:text="${flight.type}"></td>
+        <td th:text="${flight.price}"></td>
+        <td th:text="${flight.date}"></td>
+        <td th:text="${flight.flightNumber}"></td>
+        <td>
+            <img th:src="${flight.image}">
+        </td>
+        <td>
+
+            <a th:href="@{/list/{id}(id=${flight.id})}"> <button type="button" class="btn btn-success btn-sm">list </button> </a> -
+
+            <a th:href="@{/update/{id}(id=${flight.id})}"> <button type="button" class="btn btn-success btn-sm">update </button> </a> -
+
+            <a th:href="@{/delete/{id}(id=${flight.id})}"> <button type="button" class="btn btn-dark btn-sm">delete </button> </a>
+        </td>
+
+
+    </tr>
+</table>
+
+<footer></footer>
+</body>
+</html>
