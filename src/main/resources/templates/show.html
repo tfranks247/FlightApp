@@ -17,19 +17,25 @@
         <h1 class="display-4 text-center">Flight List</h1>
     </div>
 </div>
-<div class="container">
+<div class="container" id="planeBackground">
     <div class="col-2"></div>
     <div class="col-8 content">
-        <a href="/"class="btn btn-success btn-sm active" role="button">Show All Flights</a><br />
+        <a href="/"class="btn btn-primary btn-sm active" role="button">Show All Flights</a><br />
         Departing Airport :<span th:text="${flight.departingAirport} " class="form-control"></span><br />
         Arriving Airport :<span th:text="${flight.arrivingAirport} " class="form-control"></span><br />
         Flight type :<span th:text="${flight.type} " class="form-control"></span><br />
         Price :<span th:text="${flight.price} " class="form-control"></span><br />
         Date :<span th:text="${flight.date}" class="form-control"></span><br />
         Flight number :<span th:text="${flight.flightNumber}" class="form-control"></span><br />
-        <a th:href="@{/delete/{id}(id=${flight.id})}" class="btn btn-success btn-sm active" role="button">Delete this Flight</a>
+        <a th:href="@{/delete/{id}(id=${flight.id})}" class="btn btn-primary btn-sm active" role="button">Delete this Flight</a>
     </div>
     <div class="col-2"></div>
+
+
+    <div class="footer text-center">Don't Be Afraid to Fly</div>
 </div>
+
+
+
 </body>
 </html>

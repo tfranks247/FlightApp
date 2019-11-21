@@ -17,7 +17,8 @@
         <p class="lead text-center">Fill out the form and submit!.</p>
     </div>
 </div>
-<div class="container">
+
+<div class="container" id="planeBackground">
     <div class="col-2"></div>
     <div class="col-8 content">
         <form action="#" th:action="@{/process}" th:object="${flight}" method="post"
@@ -27,7 +28,7 @@
             <input type="hidden" th:field="*{id}" />
             <span th:if="${#fields.hasErrors('id')}"
                   th:errors="*{id}"></span>
-            Departing Aiport :<input class="form-control" type="text" th:field="*{departingAirport}"/>
+            Departing Airport :<input class="form-control" type="text" th:field="*{departingAirport}"/>
             <span th:if="${#fields.hasErrors('departingAirport')}"
                   th:errors="*{departingAirport}"></span><br />
             Arriving Airport :<input class="form-control" type="text" th:field="*{arrivingAirport}" />
