@@ -5,7 +5,13 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/style.css}">
-
+    <style type="text/css">
+        .custom {
+            font-family: Courier;
+            color: white;
+            font-size:20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,7 +23,7 @@
         <h1 class="display-4 text-center">Flight List</h1>
     </div>
 </div>
-<div class="container" id="planeBackground">
+<div class="container custom" id="planeBackground">
     <div class="col-2"></div>
     <div class="col-8 content">
         <a href="/"class="btn btn-primary btn-sm active" role="button">Show All Flights</a><br />
@@ -32,7 +38,7 @@
     <div class="col-2"></div>
 
 
-    <div class="footer text-center">Don't Be Afraid to Fly</div>
+<!--    <&#45;&#45;! <div class="footer text-center">Don't Be Afraid to Fly</div> &ndash;&gt;-->
 </div>
 
 

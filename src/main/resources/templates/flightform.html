@@ -5,7 +5,13 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/style.css}">
-
+    <style type="text/css">
+        .custom {
+            font-family: Courier;
+            color: white;
+            font-size:15px;
+        }
+    </style>
 </head>
 <body>
 
@@ -18,11 +24,11 @@
     </div>
 </div>
 
-<div class="container" id="planeBackground">
+<div class="container custom" id="planeBackground">
     <div class="col-2"></div>
     <div class="col-8 content">
         <form action="#" th:action="@{/process}" th:object="${flight}" method="post"
-              enctype="multipart/form-data">
+              enctype="multipart/form-data" class="custom">
             <input type="hidden" th:field="*{id}" />
             <input type="hidden" th:field="*{image}" />
             <input type="hidden" th:field="*{id}" />
@@ -53,7 +59,9 @@
 
     </div>
     <div class="col-2"></div>
+<!--    <div class="footer text-center">Don't Be Afraid to Fly</div>-->
+
 </div>
-<div th:replace="base :: footer"></div>
+
 </body>
 </html>
